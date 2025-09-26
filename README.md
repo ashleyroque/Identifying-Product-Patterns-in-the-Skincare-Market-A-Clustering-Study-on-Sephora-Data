@@ -63,6 +63,7 @@ Previous analysis revealed:
    - Essential for K-means clustering as the algorithm is sensitive to data scale
 
 ## 6. Modeling Approach
+<img width="613" height="426" alt="Screenshot 2025-09-26 161301" src="https://github.com/user-attachments/assets/5a8b4845-143a-43cf-9fac-d754f4c4627c" />
 
 ### Selected Algorithm: K-means Clustering
 - **Why K-means?**: Simple and effective for handling continuous numerical data like price, rating, and reviews
