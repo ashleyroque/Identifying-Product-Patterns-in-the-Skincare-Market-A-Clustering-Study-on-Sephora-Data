@@ -70,7 +70,8 @@ Previous analysis revealed:
 - **Number of Clusters**: k=3 selected based on exploratory analysis
 - **Algorithm Function**: Minimizes distance between products within each cluster, ensuring similarity in price, rating, and reviews
 
-## 7. Clustering Analysis and Insights
+## 7. Clustering Analysis and Insights :) here
+After running the K-means algorithm, I analyzed the resulting clusters to I identify the following: 
 
 ### Cluster 0 Characteristics:
 - **Average Price**: $55.33 USD
@@ -78,20 +79,21 @@ Previous analysis revealed:
 - **Average Reviews**: 355.5
 
 ### Interpretation:
-Cluster 0 represents mid-range priced products with relatively high ratings and moderate review counts. These are well-regarded products that don't have the highest volume of reviews.
+Cluster 0 contains products that tend to be mid-range priced, with relatively high ratings (around 4.4), and an average number of reviews. These products could be seen as moderate-priced items that are generally well-regarded by customers but don't have the highest volume of reviews compared to other clusters.
 
 ### Answers to Research Questions:
 
 **Can skincare products be grouped based on price and ratings?**
 - Yes, clustering shows clear grouping based on price (Cluster 1: lower-priced, Cluster 0: mid-range)
-- Products also cluster by ratings (Cluster 0: 4.41, Cluster 1: 4.31, Cluster 2: 3.46)
+- This suggests that price is a significant factor in how the products group together.
 
 **Can products be grouped by number of reviews?**
-- Yes, the analysis reveals patterns in review distribution across clusters
-- Clear patterns emerge: lower-priced products tend to have more reviews with moderate ratings, while higher-priced products have fewer reviews but higher ratings
+- Yes, the average ratings for each cluster show that products tend to cluster based on their ratings as well. Cluster 0 has high ratings (around 4.41), Cluster 1 has slightly lower ratings (4.31), and Cluster 2 has even lower ratings (3.46). This indicates that products with similar ratings tend to cluster together.
+- The clusters formed reflect how products can be grouped based on price, ratings, and reviews. The analysis reveals that there are clear patterns, such as lower-priced products having more reviews and moderate ratings, while higher-priced products tend to have a smaller number of reviews but higher ratings.
+
 
 ## 8. Impact and Applications
-
+### This project could impact both consumers and businesses and here is how: 
 ### Consumer Impact:
 - Helps consumers make more informed purchasing decisions by understanding product clusters
 - Enables better comparison of products within similar price and rating ranges
@@ -113,4 +115,4 @@ Cluster 0 represents mid-range priced products with relatively high ratings and 
 
 ---
 
-*Note: This README provides a comprehensive overview of the skincare product clustering analysis project. For detailed code implementation and visualizations, please refer to the Jupyter notebook and supporting files in this repository.*
+
