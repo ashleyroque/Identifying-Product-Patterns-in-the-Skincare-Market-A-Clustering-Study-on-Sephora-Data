@@ -11,6 +11,22 @@ The goal of this project is to segment skincare products from the Sephora datase
 
 *3. What patterns emerge when clustering products based on these factors?* 
 
+## 💡 What is Clustering and How Does it Work? 
+### What is Clustering?
+Clustering is an unsupervised machine learning technique used to group similar data points together based on shared features.
+
+#### 💬 Example visualization of clustering 
+<img width="945" height="448" alt="Screenshot 2025-09-30 110526" src="https://github.com/user-attachments/assets/546ed4de-31fe-4935-b343-cd9983fb0094" />
+
+🔗 Sourced from: https://developers.google.com/machine-learning/clustering/overview 
+
+### Methods Used:
+- **K-means Clustering**: This method assigns each product to a cluster based on the mean of features (e.g., price, rating, reviews). The algorithm iterates to minimize the sum of squared distances from data points to their assigned cluster centers.
+- **Agglomerative Clustering**: Creates clusters hierarchically by merging the closest data points or clusters, without requiring a predefined number of clusters.
+  
+Both methods help reveal insights into how products group together based on similar characteristics.
+
+
 ## 📊 Introducing the Data   
 The dataset used is sourced from [Kaggle: Instagram Data](https://www.kaggle.com/datasets/propriyam/instagram-data).  
 
@@ -27,34 +43,6 @@ The dataset used is sourced from [Kaggle: Instagram Data](https://www.kaggle.com
 The features I used for clustering were primarily price, rating, and reviews, as these variables are crucial for analyzing product popularity, market positioning, and customer preferences. By clustering products based on these attributes, we can uncover patterns and group similar products.
 
 
-## 💡 What is Clustering and How Does it Work? 
-### What is Clustering?
-Clustering is an unsupervised machine learning technique used to group similar data points together based on shared features.
-
-#### 💬 Example visualization of clustering 
-<img width="945" height="448" alt="Screenshot 2025-09-30 110526" src="https://github.com/user-attachments/assets/546ed4de-31fe-4935-b343-cd9983fb0094" />
-
-🔗 Sourced from: https://developers.google.com/machine-learning/clustering/overview 
-
-
-### Methods Used:
-- **K-means Clustering**: This method assigns each product to a cluster based on the mean of features (e.g., price, rating, reviews). The algorithm iterates to minimize the sum of squared distances from data points to their assigned cluster centers.
-- **Agglomerative Clustering**: Creates clusters hierarchically by merging the closest data points or clusters, without requiring a predefined number of clusters.
-  
-Both methods help reveal insights into how products group together based on similar characteristics.
-
-## 🔧Data Preprocessing
-Preprocessing is a crucial step in the OSEMN pipeline, as it involves the “cleaning” of data before any further processing. This step ensures that the errors are addressed and missing or inaccurate values are removed or corrected, providing a solid foundation for meaningful insights.
-
-### Here are the pre-processing steps I took to prepare the data for analysis:
-
-1. **Handling Missing Values**: 
-   - Missing values in `price_usd`, `rating`, and `reviews` were filled with column medians
-   - Prevents bias or distortion caused by outliers
-
-2. **Standardization**:
-   - Features were standardized using `StandardScaler` from scikit-learn
-   - Essential for K-means clustering as the algorithm is sensitive to data scale
 
 ## 💻 Data Understanding and Visualization
 
@@ -70,28 +58,39 @@ Previous analysis revealed:
   <img width="503" height="478" alt="Screenshot 2025-09-25 105749" src="https://github.com/user-attachments/assets/04ea4551-a9e5-456e-a29b-cd7fd8e9fff0" />
 <img width="577" height="358" alt="Screenshot 2025-09-25 110008" src="https://github.com/user-attachments/assets/8d7ff151-d8d3-4c0d-850e-f6729a781adc" />
 
+## 🔧 Data Preprocessing
+Preprocessing is a crucial step in the OSEMN pipeline, as it involves the “cleaning” of data before any further processing. This step ensures that the errors are addressed and missing or inaccurate values are removed or corrected, providing a solid foundation for meaningful insights.
+
+### Here are the pre-processing steps I took to prepare the data for clustering:
+
+1. **Handling Missing Values**: 
+   - Missing values in `price_usd`, `rating`, and `reviews` were filled with column medians
+   - This prevents bias or distortion caused by outliers
+
+2. **Standardization**:
+   - Features were standardized using `StandardScaler` from scikit-learn
+   - Essential for K-means clustering as the algorithm is sensitive to data scale
 
 
-## 6. Modeling Approach
-<img width="613" height="426" alt="Screenshot 2025-09-26 161301" src="https://github.com/user-attachments/assets/5a8b4845-143a-43cf-9fac-d754f4c4627c" />
 
+## 👩🏻‍💻 Modeling Approach - K-means Clustering 
 ### Selected Algorithm: K-means Clustering
 - **Why K-means?**: Simple and effective for handling continuous numerical data like price, rating, and reviews
 - **Number of Clusters**: k=3 selected based on exploratory analysis
 - **Algorithm Function**: Minimizes distance between products within each cluster, ensuring similarity in price, rating, and reviews
 
-## 7. Clustering Analysis and Insights :) here
-After running the K-means algorithm, I analyzed the resulting clusters to I identify the following: 
+<img width="613" height="426" alt="Screenshot 2025-09-26 161301" src="https://github.com/user-attachments/assets/5a8b4845-143a-43cf-9fac-d754f4c4627c" />
 
-### Cluster 0 Characteristics:
+## ✍ Clustering Analysis and Insights 
+After running the K-means algorithm, I analyzed the resulting clusters to I identify the following: 
 - **Average Price**: $55.33 USD
 - **Average Rating**: 4.41
 - **Average Reviews**: 355.5
 
-### Interpretation:
+###  Interpretation:
 Cluster 0 contains products that tend to be mid-range priced, with relatively high ratings (around 4.4), and an average number of reviews. These products could be seen as moderate-priced items that are generally well-regarded by customers but don't have the highest volume of reviews compared to other clusters.
 
-### Answers to Research Questions:
+### It also helped answer my research questions:
 
 **Can skincare products be grouped based on price and ratings?**
 - Yes, clustering shows clear grouping based on price (Cluster 1: lower-priced, Cluster 0: mid-range)
@@ -102,7 +101,7 @@ Cluster 0 contains products that tend to be mid-range priced, with relatively hi
 - The clusters formed reflect how products can be grouped based on price, ratings, and reviews. The analysis reveals that there are clear patterns, such as lower-priced products having more reviews and moderate ratings, while higher-priced products tend to have a smaller number of reviews but higher ratings.
 
 
-## 8. Impact and Applications
+##  🧾Impact and Applications
 ### This project could impact both consumers and businesses and here is how: 
 ### Consumer Impact:
 - Helps consumers make more informed purchasing decisions by understanding product clusters
