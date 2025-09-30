@@ -1,30 +1,18 @@
-# Skincare Product Clustering Analysis
+# Market Segmentation of Sephora Skincare Products Using K-Means Clustering
+## 📜 Project Overview
+The goal of this project is to segment skincare products from the Sephora dataset based on key features such as price, rating, and number of reviews. The primary goal is to understand how different product characteristics relate to each other and identify if products can be grouped into meaningful clusters based on these features.
 
-## 1. Problem Statement
+## 📌 Problem Statement 
+### With this project, I am looking to answer these questions:
 
-### What problem are we trying to solve?
-This project aims to segment skincare products from the Sephora dataset based on key features such as price, rating, and number of reviews. The primary goal is to understand how different product characteristics relate to each other and identify if products can be grouped into meaningful clusters based on these features.
+*1. Can skincare products be grouped based on price and ratings?*
 
-### Research Questions:
-- Can skincare products be grouped based on price and ratings?
-- Can products be grouped by number of reviews?
-- What patterns emerge when clustering products based on these factors?
+*2. Can products be grouped by number of reviews?* 
 
-## 2. Understanding Clustering
+*3. What patterns emerge when clustering products based on these factors?* 
 
-### What is Clustering?
-Clustering is an unsupervised machine learning technique used to group similar data points together based on shared features.
-
-### Methods Used:
-- **K-means Clustering**: Assigns each product to a cluster based on the mean of features (price, rating, reviews). The algorithm iterates to minimize the sum of squared distances from data points to their assigned cluster centers.
-- **Agglomerative Clustering**: Creates clusters hierarchically by merging the closest data points or clusters, without requiring a predefined number of clusters.
-
-Both methods help reveal insights into how products group together based on similar characteristics.
-
-## 3. Dataset Overview
-
-### Source
-The Sephora Products and Skincare Reviews dataset from Kaggle.
+## 📊 Introducing the Data   
+The dataset used is sourced from [Kaggle: Instagram Data](https://www.kaggle.com/datasets/propriyam/instagram-data).  
 
 ### Key Features:
 - `product_name`: Name of the product
@@ -35,11 +23,40 @@ The Sephora Products and Skincare Reviews dataset from Kaggle.
 - `reviews`: Number of reviews
 - `skin_type`: Target skin type
 - `ingredients`: Product ingredients
+  
+The features I used for clustering were primarily price, rating, and reviews, as these variables are crucial for analyzing product popularity, market positioning, and customer preferences. By clustering products based on these attributes, we can uncover patterns and group similar products.
 
-### Features Used for Clustering:
-Price, rating, and reviews were selected as these variables are crucial for analyzing product popularity, market positioning, and customer preferences.
 
-## 4. Data Understanding and Visualization
+## 💡 What is Clustering and How Does it Work? 
+### What is Clustering?
+Clustering is an unsupervised machine learning technique used to group similar data points together based on shared features.
+
+#### 💬 Example visualization of clustering 
+<img width="945" height="448" alt="Screenshot 2025-09-30 110526" src="https://github.com/user-attachments/assets/546ed4de-31fe-4935-b343-cd9983fb0094" />
+
+🔗 Sourced from: https://developers.google.com/machine-learning/clustering/overview 
+
+
+### Methods Used:
+- **K-means Clustering**: This method assigns each product to a cluster based on the mean of features (e.g., price, rating, reviews). The algorithm iterates to minimize the sum of squared distances from data points to their assigned cluster centers.
+- **Agglomerative Clustering**: Creates clusters hierarchically by merging the closest data points or clusters, without requiring a predefined number of clusters.
+  
+Both methods help reveal insights into how products group together based on similar characteristics.
+
+##  Data Preprocessing
+Preprocessing is a crucial step in the OSEMN pipeline, as it involves the “cleaning” of data before any further processing. This step ensures that the errors are addressed and missing or inaccurate values are removed or corrected, providing a solid foundation for meaningful insights.
+
+### Here are the pre-processing steps I took to prepare the data for analysis:
+
+1. **Handling Missing Values**: 
+   - Missing values in `price_usd`, `rating`, and `reviews` were filled with column medians
+   - Prevents bias or distortion caused by outliers
+
+2. **Standardization**:
+   - Features were standardized using `StandardScaler` from scikit-learn
+   - Essential for K-means clustering as the algorithm is sensitive to data scale
+
+## Data Understanding and Visualization
 
 ### Initial Analysis (from Project 1)
 Previous analysis revealed:
@@ -51,16 +68,6 @@ Previous analysis revealed:
 - Histograms and scatter plots for key variables (price, rating, reviews)
 - Distribution analysis of important features
 
-## 5. Data Preprocessing
-
-### Steps Taken:
-1. **Handling Missing Values**: 
-   - Missing values in `price_usd`, `rating`, and `reviews` were filled with column medians
-   - Prevents bias or distortion caused by outliers
-
-2. **Standardization**:
-   - Features were standardized using `StandardScaler` from scikit-learn
-   - Essential for K-means clustering as the algorithm is sensitive to data scale
 
 ## 6. Modeling Approach
 <img width="613" height="426" alt="Screenshot 2025-09-26 161301" src="https://github.com/user-attachments/assets/5a8b4845-143a-43cf-9fac-d754f4c4627c" />
