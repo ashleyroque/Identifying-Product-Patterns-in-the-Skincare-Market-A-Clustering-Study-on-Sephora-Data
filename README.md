@@ -43,7 +43,7 @@ Clustering is an unsupervised machine learning technique used to group similar d
   
 Both methods help reveal insights into how products group together based on similar characteristics.
 
-##  Data Preprocessing
+## 🔧Data Preprocessing
 Preprocessing is a crucial step in the OSEMN pipeline, as it involves the “cleaning” of data before any further processing. This step ensures that the errors are addressed and missing or inaccurate values are removed or corrected, providing a solid foundation for meaningful insights.
 
 ### Here are the pre-processing steps I took to prepare the data for analysis:
@@ -56,9 +56,9 @@ Preprocessing is a crucial step in the OSEMN pipeline, as it involves the “cle
    - Features were standardized using `StandardScaler` from scikit-learn
    - Essential for K-means clustering as the algorithm is sensitive to data scale
 
-## Data Understanding and Visualization
+## 💻 Data Understanding and Visualization
 
-### Initial Analysis (from Project 1)
+### Initial Analysis (from previous project)
 Previous analysis revealed:
 - Price may influence purchasing decisions but doesn't strongly affect customer ratings (1-5 scale)
 - Moisturizers were the highest-rated category, followed by cleansers and sunscreens
@@ -67,6 +67,9 @@ Previous analysis revealed:
 ### Visualization Techniques:
 - Histograms and scatter plots for key variables (price, rating, reviews)
 - Distribution analysis of important features
+  <img width="503" height="478" alt="Screenshot 2025-09-25 105749" src="https://github.com/user-attachments/assets/04ea4551-a9e5-456e-a29b-cd7fd8e9fff0" />
+<img width="577" height="358" alt="Screenshot 2025-09-25 110008" src="https://github.com/user-attachments/assets/8d7ff151-d8d3-4c0d-850e-f6729a781adc" />
+
 
 
 ## 6. Modeling Approach
